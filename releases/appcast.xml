@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>DropDL</title>
+        <item>
+            <title>1.1.4</title>
+            <pubDate>Thu, 16 Jul 2026 11:16:11 +0530</pubDate>
+            <sparkle:version>34</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.1.4.dmg" sparkle:edSignature="wNWyShLhwOmyy2Bh+QXh0GEtQgfc+w7BKbyld05r2CKX8LbklnKQX9ofyZb6XuYD11B9C98to9ZJmaeopcUcAg==" length="4470678" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.1.3</title>
+            <pubDate>Wed, 15 Jul 2026 15:16:36 +0530</pubDate>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.1.3.dmg" sparkle:edSignature="C+ck7YQCkrjmI47+ggO0AvRmf0No17KvQqWcCO4OFoWO/EQH/rWI0PbE3sTDAV8z4sUWSCfYDUgnJX80hvGLAg==" length="4440648" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.1.2</title>
+            <pubDate>Sat, 11 Jul 2026 19:15:01 +0530</pubDate>
+            <sparkle:version>20</sparkle:version>
+            <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.1.2.dmg" sparkle:edSignature="dz1OnarvsvwW23c3fRvMz7tq8fToVaQ1QleICNihmHvUhdEID/fFvK5FOJ7TeNOE5tOfrHvdUc8FiyFcje3SCQ==" length="4433945" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.1.1</title>
+            <pubDate>Tue, 07 Jul 2026 11:21:00 +0530</pubDate>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.1.1.dmg" sparkle:edSignature="D7ksWYAweFcnXAl6z41gEle0rVBWGJ3OKuiF4KOay7h5UgbVWzmDqGQZNW9skJcve89JmD6wfq4VgUkdZeqTCQ==" length="4442882" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.1.0</title>
+            <pubDate>Tue, 07 Jul 2026 11:10:00 +0530</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.1.0.dmg" sparkle:edSignature="Q3hkdjF7kQpqZeh9ScZUUnQ6Z589AcLMYlnadLDoRjd5dLznLamp/aahPH9opYR/Bo8wZ9ncKtgMgC61ok5YCg==" length="4446403" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.0.9</title>
+            <pubDate>Tue, 07 Jul 2026 09:55:00 +0530</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>1.0.9</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.9.dmg" sparkle:edSignature="BfstNSOrYm/ocCVY80dgwIy/j7z2s5Qh3oxpg43dUGOWn+r/GTM6tsUiktiD6o5adNB9O8yvcbAhUeOMLETACw==" length="4445323" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.0.8</title>
+            <pubDate>Mon, 06 Jul 2026 22:30:00 +0530</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.8.dmg" sparkle:edSignature="EzvvegUAJsTPPDvfCIez8Dj+35o2JKkSQgHZ0eX2lw27gxjZhg7x7WUmlNQsB3X/ItH7lv1HqDGhQoFc4SJQBA==" length="4408221" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.0.7</title>
+            <pubDate>Mon, 06 Jul 2026 22:15:00 +0530</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.7.dmg" length="4407689" type="application/octet-stream" sparkle:edSignature="nzO5LvHz3oYJGD/p01L8vBqswiJepHFK99uSLhMHl2QFnP7b1oDyoIllhDZR3anb7fqL84wU4mhsdqBZyEP7Bw==" />
+        </item>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Mon, 06 Jul 2026 22:05:00 +0530</pubDate>
+            <sparkle:version>8</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.6.dmg" length="4407694" type="application/octet-stream" sparkle:edSignature="ueKgyfNTdb20VoFNRGgvGydt3+DVFskF8YNHkI85FiZ4j/nZjNE+ijQrlnlqS8Npa/1E1+EyNOaugupHWSB9DA==" />
+        </item>
+        <item>
+            <title>1.0.5</title>
+            <pubDate>Mon, 06 Jul 2026 21:55:00 +0530</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.5.dmg" length="4407926" type="application/octet-stream" sparkle:edSignature="PUvUSaK/vmjA+BGdLzUEAUfRScbNe93ty+PyobL7ZubmOu/ReoXRjfDsJ48IVOmtnGBrcAZ/59hwFp4v209PAg==" />
+        </item>
+        <item>
+            <title>1.0.4</title>
+            <pubDate>Mon, 06 Jul 2026 21:50:00 +0530</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.4.dmg" length="4409578" type="application/octet-stream" sparkle:edSignature="+DW4Dn1WIO7fKPerAW6x9lrB3cTXu1wUOFU7wiqHiOy/6a3yLZdc9UQbP6OWe4e+9Ysa8MSQuB9FdtbQBb22Cg==" />
+        </item>
+        <item><title>1.0.3</title><pubDate>Mon, 06 Jul 2026 21:30:00 +0530</pubDate><sparkle:version>5</sparkle:version><sparkle:shortVersionString>1.0.3</sparkle:shortVersionString><sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion><enclosure url="https://releases-silk.vercel.app/Drovio_1.0.3.dmg" length="4409383" type="application/octet-stream" sparkle:edSignature="67KdW2756ftDvPJKI7Z7aWoLRYPPCYwpm5BUQT/JF0TBMWEV0DHzqzJyxVmecQV2K7fZyf1SHeVuvl5MccddCg==" /></item><item>
+            <title>1.0.2</title>
+            <pubDate>Mon, 06 Jul 2026 21:00:00 +0530</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.2.dmg" length="4512075" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.0.1</title>
+            <pubDate>Mon, 06 Jul 2026 20:36:55 +0530</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio_1.0.1.dmg" length="4511402" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>1.0</title>
+            <pubDate>Mon, 06 Jul 2026 20:15:38 +0530</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://releases-silk.vercel.app/Drovio.dmg" length="4510982" type="application/octet-stream" />
+        </item>
+    </channel>
+</rss>

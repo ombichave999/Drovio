@@ -1,0 +1,13 @@
+{
+  "title": "TestDrovio",
+  "background-color": "#ffffff",
+  "window": {
+    "position": { "x": 200, "y": 120 },
+    "size": { "width": 600, "height": 400 }
+  },
+  "format": "UDBZ",
+  "contents": [
+    { "x": 150, "y": 180, "type": "file", "path": "Drovio.xcarchive/Products/Applications/Drovio.app", "name": "Drovio.app" },
+    { "x": 450, "y": 180, "type": "link", "path": "/Applications" }
+  ]
+}

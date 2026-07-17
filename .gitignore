@@ -1,0 +1,44 @@
+# Xcode
+#
+# gitignore contributors: goldin2008, bclubb
+
+## Build results
+build/
+DerivedData/
+
+## Xcode project-specific
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Personal Xcode settings
+*.xcuserstate
+
+## Package Dependency Manager
+.swiftpm/xcode/package.workspace
+.swiftpm/xcode/xcuserdata
+
+## Appdmg
+releases/*.dmg
+
+## Archives
+*.xcarchive
+
+## OS Files
+.DS_Store
+
+## Drovio Temporary/Scratch Files
+yt-dlp
+scratch_insta/
+*.mp4
+*.webm
+*.part
+*.swift
+!Drovio/**/*.swift
+!Drovio/Utilities/Log.swift
