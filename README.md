@@ -2,6 +2,8 @@
 
 <p align="center">
   <img src="screenshot.gif" alt="Drovio UI Animation" width="480">
+  <br><br>
+  <img src="screenshot.png" alt="Drovio Menu Bar UI" width="480">
 </p>
 
 <p align="center">
