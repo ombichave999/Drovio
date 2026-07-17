@@ -1,7 +1,7 @@
 # Drovio
 
 <p align="center">
-  <img src="screenshot.png" alt="Drovio UI Screenshot" width="480">
+  <img src="screenshot.gif" alt="Drovio UI Animation" width="480">
 </p>
 
 <p align="center">
