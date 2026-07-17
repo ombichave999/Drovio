@@ -1,41 +1,77 @@
 # Drovio
 
-A premium, native macOS menu bar video and image downloader. Paste a link, hit Return, done.
+<p align="center">
+  <img src="screenshot.png" alt="Drovio UI Screenshot" width="480">
+</p>
 
-Built with Swift 6, SwiftUI, AppKit, actors and structured concurrency. No Electron, no web views.
+<p align="center">
+  <b>A premium, native macOS menu bar video and image downloader. Paste. Download. Done.</b>
+</p>
 
-![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-blue) ![Swift](https://img.shields.io/badge/Swift-6.0-orange)
+<p align="center">
+  <a href="https://github.com/ombichave999/Drovio/releases/latest">
+    <img src="https://img.shields.io/github/v/release/ombichave999/Drovio?color=blue&label=Latest%20Release" alt="Latest Release">
+  </a>
+  <img src="https://img.shields.io/badge/platform-macOS%2014%2B-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/Swift-6.0-orange" alt="Swift Version">
+  <img src="https://img.shields.io/github/license/ombichave999/Drovio?color=lightgrey" alt="License">
+</p>
+
+---
+
+**Drovio** is a lightweight, blazing-fast, and completely private downloader for macOS. Built purely with Swift 6 and SwiftUI, it sits quietly in your menu bar without cluttering your dock, ready to download media with a single click.
 
 ## Features
 
-Menu bar only (no Dock icon), compact floating window with native blur, light and dark mode, clipboard link detection with one click "Paste & Download", drag and drop URLs, thumbnail preview before downloading, download queue with up to 3 simultaneous downloads, pause / resume / cancel / retry, live progress with speed and ETA, automatic best quality with ffmpeg stream merging, smart filenames from video titles with automatic "(1)", "(2)" deduplication, native notifications that reveal the file in Finder, local download history with thumbnails and quick actions, launch at login, and automatic yt-dlp installation and updates. Downloads keep running when the window is closed.
+- [x] **Native SwiftUI Interface**: Beautiful, responsive layout with frosted-glass effects.
+- [x] **Smart Clipboard Detection**: Instantly detects video/image URLs on copy and prompts you to download.
+- [x] **Drag-and-Drop Support**: Simply drag a URL directly onto the app window.
+- [x] **Multi-format Support**: Download in highest quality, 1080p, 720p, or extract MP3 audio.
+- [x] **Live Download Queue**: Manage up to 3 concurrent downloads with live progress, speed tracking, and ETAs.
+- [x] **Instagram Posts & Carousels**: Download multiple photos/videos from a single post, with high-resolution image support downloaded directly from the CDN.
+- [x] **Pause / Resume / Cancel**: Full download lifecycle management.
+- [x] **Native macOS Notifications**: Get notified when downloads complete and open files directly in Finder.
+- [x] **Local Download History**: Keeps track of recent downloads with thumbnails.
+- [x] **Launch at Login**: Easily toggle start-on-boot from Settings.
+- [x] **Automatic Dependencies**: Silently downloads and updates its helper binaries (`yt-dlp` and `ffmpeg`) internally.
 
-Supported out of the box: YouTube, Instagram Reels, Posts (Carousels/Images) and Videos. Any other yt-dlp compatible link pasted manually will also work; adding official platforms is one line in `URLValidator.swift`.
+---
+
+## Installation
+
+### Method 1: Precompiled App (Recommended)
+1. Go to the [Releases](https://github.com/ombichave999/Drovio/releases) page.
+2. Download the latest `Drovio_1.1.4.dmg` installer.
+3. Open the DMG and drag `Drovio.app` to your `/Applications` directory.
+
+### Method 2: Build from Source
+1. Clone this repository: `git clone https://github.com/ombichave999/Drovio.git`
+2. Open `Drovio.xcodeproj` in Xcode 16 or newer.
+3. Select the `Drovio` scheme and build/run with `⌘R`.
+   *(Ad hoc signing is configured by default, so a developer account is not required to run it locally.)*
+
+---
 
 ## Requirements
 
-Apple Silicon or Intel Mac running macOS 14 Sonoma or newer, plus Xcode 16 or newer to build.
+- Apple Silicon or Intel Mac
+- macOS 14 Sonoma or newer
+- Xcode 16+ (only if compiling from source)
 
-No manual installation of yt-dlp or ffmpeg needed. On first launch Drovio checks `~/Library/Application Support/Drovio/bin`, Homebrew and `/usr/local/bin`; anything missing is downloaded automatically inside the app (yt-dlp from its official GitHub release, ffmpeg from evermeet.cx). If you already have Homebrew installs, those are used.
+---
 
-Note for Apple Silicon: the auto installed ffmpeg build is Intel and runs via Rosetta 2. If you prefer a native arm64 build, `brew install ffmpeg` and Drovio will pick it up automatically.
+## Roadmap
 
-## Build and run
+- [ ] **YouTube Playlist Support**: Download complete video playlists with one click.
+- [ ] **Batch Downloads**: Paste multiple URLs at once.
+- [ ] **Browser Extensions**: Quick-send links to Drovio from Chrome, Safari, and Firefox.
+- [ ] **Custom Output Folders**: Custom folder rules based on download source platform.
 
-1. Open `Drovio.xcodeproj` in Xcode 16+
-2. Select the Drovio scheme, press ⌘R
-
-The project uses ad hoc signing (`CODE_SIGN_IDENTITY = "-"`) so it builds and runs locally without a developer account. To distribute, set your team in Signing & Capabilities.
-
-To install permanently: Product → Archive → Distribute App → Copy App, then drop `Drovio.app` in /Applications. Enable "Launch at Login" in Settings (⌘,).
-
-## Usage
-
-Click the arrow icon in the menu bar. Paste a URL (⌘V), pick a quality, press Return. Copying a supported link anywhere in macOS shows a "Video link detected" banner with one click Paste & Download. ESC closes the window, ⌘, opens Settings. The menu bar icon shows a badge with the number of active downloads.
+---
 
 ## Architecture (MVVM)
 
-```
+```text
 Drovio/
 ├── App/            DrovioApp, AppDelegate, AppContainer (DI composition root)
 ├── Models/         DownloadTask, VideoInfo, VideoQuality, HistoryItem, DownloadError
@@ -46,10 +82,12 @@ Drovio/
 └── Utilities/      URLValidator, FilenameSanitizer, ProcessRunner, Log
 ```
 
-`DownloadEngine` is an actor that owns every yt-dlp process and emits structured progress events parsed from a machine readable progress template. `Toolbox` is an actor responsible for locating, installing and updating yt-dlp and ffmpeg. All UI state lives in `@Observable` MainActor classes. Raw tool output is logged via `os.Logger` but never shown to users; stderr is classified into friendly `DownloadError` cases (private video, deleted, age restricted, rate limited, network, and so on).
+- `DownloadEngine` is a Swift actor that manages yt-dlp processes and parses live progress data.
+- `Toolbox` automates binary bootstrap checks and updates.
+- Stderr/stderr streams are mapped to user-friendly errors (private, deleted, age-restricted, network, etc.).
 
-The Info.plist is generated by Xcode (`GENERATE_INFOPLIST_FILE = YES`) with `LSUIElement = YES` set via `INFOPLIST_KEY_LSUIElement`, which is what keeps Drovio out of the Dock.
+---
 
 ## Legal
 
-Download only content you have the right to download. Respect each platform's terms of service and copyright law.
+Download only content you have the right to download. Respect each platform's terms of service and copyright laws.
