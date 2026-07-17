@@ -25,10 +25,11 @@
 
 - [x] **Native SwiftUI Interface**: Beautiful, responsive layout with frosted-glass effects.
 - [x] **Smart Clipboard Detection**: Instantly detects video/image URLs on copy and prompts you to download.
-- [x] **Drag-and-Drop Support**: Simply drag a URL directly onto the app window.
-- [x] **Multi-format Support**: Download in highest quality, 1080p, 720p, or extract MP3 audio.
+- [x] **YouTube Downloader**: Download YouTube videos and Shorts in high quality.
+- [x] **Instagram Reels & Posts**: Download reels, single photos, and multi-image carousels/slideshows natively.
+- [x] **Music Extraction**: Support for downloading audio-only from Spotify and Apple Music links.
+- [x] **Multi-format Support**: Download in highest quality, 1080p, 720p, or extract MP3/M4A audio.
 - [x] **Live Download Queue**: Manage up to 3 concurrent downloads with live progress, speed tracking, and ETAs.
-- [x] **Instagram Posts & Carousels**: Download multiple photos/videos from a single post, with high-resolution image support downloaded directly from the CDN.
 - [x] **Pause / Resume / Cancel**: Full download lifecycle management.
 - [x] **Native macOS Notifications**: Get notified when downloads complete and open files directly in Finder.
 - [x] **Local Download History**: Keeps track of recent downloads with thumbnails.
