@@ -40,26 +40,109 @@
 
 ---
 
-## Installation
+# Installation
 
-### Method 1: Precompiled App (Recommended)
-1. Go to the [Releases](https://github.com/ombichave999/Drovio/releases) page.
-2. Download the latest `Drovio_1.1.4.dmg` installer.
-3. Open the DMG and drag `Drovio.app` to your `/Applications` directory.
-
-### Method 2: Build from Source
-1. Clone this repository: `git clone https://github.com/ombichave999/Drovio.git`
-2. Open `Drovio.xcodeproj` in Xcode 16 or newer.
-3. Select the `Drovio` scheme and build/run with `⌘R`.
-   *(Ad hoc signing is configured by default, so a developer account is not required to run it locally.)*
+Drovio can be installed either from the precompiled release or by building from source.
 
 ---
 
-## Requirements
+## Method 1 — Download the Precompiled App (Recommended)
 
-- Apple Silicon or Intel Mac
-- macOS 14 Sonoma or newer
-- Xcode 16+ (only if compiling from source)
+1. Download the latest DMG from GitHub Releases.
+2. Open the DMG.
+3. Drag Drovio.app into the Applications folder.
+4. Launch Drovio.
+
+> [!NOTE]
+> If macOS blocks the application because it is from an unidentified developer, right-click the app, choose Open, then click Open again.
+
+---
+
+## Method 2 — Install Using Terminal
+
+Advanced users can install directly from Terminal.
+
+```bash
+curl -L -O https://github.com/ombichave999/Drovio/releases/latest/download/Drovio.dmg
+hdiutil attach Drovio.dmg
+cp -R /Volumes/Drovio/Drovio.app /Applications/
+hdiutil detach /Volumes/Drovio
+open /Applications/Drovio.app
+```
+
+If Gatekeeper prevents launching, remove the quarantine attribute using:
+
+```bash
+sudo xattr -rd com.apple.quarantine /Applications/Drovio.app
+```
+
+Then launch again.
+
+---
+
+## Method 3 — Build from Source
+
+### Requirements
+
+* Xcode 16+
+* macOS 15+
+* Git
+
+### Steps
+
+1. Clone this repository:
+```bash
+git clone https://github.com/ombichave999/Drovio.git
+```
+2. Open Drovio.xcodeproj.
+3. Select the Drovio scheme.
+4. Press Command + R.
+
+Ad-hoc signing is already configured so an Apple Developer account is not required for local builds.
+
+---
+
+## Troubleshooting
+
+<details>
+<summary><b>"Drovio is damaged and can't be opened"</b></summary>
+
+Gatekeeper may flag unsigned builds. Remove the quarantine attribute using:
+
+```bash
+sudo xattr -rd com.apple.quarantine /Applications/Drovio.app
+```
+</details>
+
+<details>
+<summary><b>App won't launch</b></summary>
+
+Delete the old version of the app from your Applications folder, reinstall the latest build, and verify that appropriate read/write permissions are granted.
+</details>
+
+<details>
+<summary><b>Build errors</b></summary>
+
+Ensure you are using the latest stable release of Xcode and clean the build folder by pressing Command + Shift + K before attempting to build again.
+</details>
+
+---
+
+## Updating
+
+Users can simply replace the app with the latest release from GitHub.
+
+---
+
+## Future Installation Methods
+
+Homebrew installation is planned.
+
+```bash
+brew install --cask drovio
+```
+
+Coming Soon
 
 ---
 
