@@ -131,11 +131,11 @@ struct MainView: View {
                     .foregroundStyle(.primary)
                     .lineLimit(1)
                 
-                Text("Paste. Download. Done.")
-                    .font(.system(size: 10, weight: .medium))
+                Text("Download from YouTube, Instagram, Spotify, or Apple Music by copying a link.")
+                    .font(.system(size: 9, weight: .medium))
                     .foregroundStyle(.secondary.opacity(0.8))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.7)
             }
             
             Spacer()
@@ -251,7 +251,7 @@ struct MainView: View {
             }
             
             // URL field
-            TextField("Paste Video URL...", text: $urlString)
+            TextField("Paste YouTube, Instagram, Spotify, or Apple Music link...", text: $urlString)
                 .textFieldStyle(.plain)
                 .font(.system(size: 13))
                 .focused($urlFieldFocused)
