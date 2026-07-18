@@ -6,15 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXTargetDependency section */
+		8E00000000000000000000D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD00000000000000000000T1 /* Drovio */;
+			targetProxy = 8E00000000000000000000D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+		8E00000000000000000000D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD00000000000000000000P1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD00000000000000000000T1;
+			remoteInfo = Drovio;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXBuildFile section */
 		8EA3604BD6805EA7BAA1D9C3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 82C12DE7F8B8FB5FD9B5916B /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E00000000000000000000A5 /* DrovioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrovioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD00000000000000000000A4 /* Drovio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drovio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8E00000000000000000000A1 /* DrovioTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DrovioTests;
+			sourceTree = "<group>";
+		};
 		DD00000000000000000000A1 /* Drovio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Drovio;
@@ -23,6 +47,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8E00000000000000000000B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD00000000000000000000B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				DD00000000000000000000A4 /* Drovio.app */,
+				8E00000000000000000000A5 /* DrovioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +85,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8E00000000000000000000T2 /* DrovioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E00000000000000000000C3 /* Build configuration list for PBXNativeTarget "DrovioTests" */;
+			buildPhases = (
+				8E00000000000000000000B1 /* Sources */,
+				8E00000000000000000000B2 /* Frameworks */,
+				8E00000000000000000000B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E00000000000000000000D5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8E00000000000000000000A1 /* DrovioTests */,
+			);
+			name = DrovioTests;
+			productName = DrovioTests;
+			productReference = 8E00000000000000000000A5 /* DrovioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DD00000000000000000000T1 /* Drovio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD00000000000000000000C2 /* Build configuration list for PBXNativeTarget "Drovio" */;
@@ -89,6 +142,10 @@
 					DD00000000000000000000T1 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					8E00000000000000000000T2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = DD00000000000000000000T1;
+					};
 				};
 			};
 			buildConfigurationList = DD00000000000000000000C1 /* Build configuration list for PBXProject "Drovio" */;
@@ -109,11 +166,19 @@
 			projectRoot = "";
 			targets = (
 				DD00000000000000000000T1 /* Drovio */,
+				8E00000000000000000000T2 /* DrovioTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8E00000000000000000000B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD00000000000000000000B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +189,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8E00000000000000000000B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD00000000000000000000B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +206,38 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		8E00000000000000000000D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 34;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drovio.DrovioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drovio.app/Contents/MacOS/Drovio";
+			};
+			name = Debug;
+		};
+		8E00000000000000000000D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 34;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drovio.DrovioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drovio.app/Contents/MacOS/Drovio";
+			};
+			name = Release;
+		};
 		DD00000000000000000000D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +411,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8E00000000000000000000C3 /* Build configuration list for PBXNativeTarget "DrovioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E00000000000000000000D3 /* Debug */,
+				8E00000000000000000000D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DD00000000000000000000C1 /* Build configuration list for PBXProject "Drovio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

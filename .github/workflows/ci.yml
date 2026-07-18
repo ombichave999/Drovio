@@ -1,0 +1,108 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+      - 'beta-*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: macos-14
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.0.app/Contents/Developer
+
+      - name: Cache Swift Packages
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData
+          key: ${{ runner.os }}-xcode-deps-${{ hashFiles('**/project.pbxproj') }}
+          restore-keys: |
+            ${{ runner.os }}-xcode-deps-
+
+      - name: Resolve Package Dependencies
+        run: xcodebuild -resolvePackageDependencies -project Drovio.xcodeproj
+
+      - name: Run Tests
+        run: xcodebuild test -project Drovio.xcodeproj -scheme Drovio -destination "platform=macOS" -derivedDataPath ./build/DerivedData
+
+  release:
+    name: Package & Release
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: macos-14
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.0.app/Contents/Developer
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install appdmg
+        run: npm install -g appdmg
+
+      - name: Resolve Package Dependencies
+        run: xcodebuild -resolvePackageDependencies -project Drovio.xcodeproj
+
+      - name: Build and Package DMG
+        env:
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+        run: |
+          mkdir -p releases
+          # Retrieve tag name
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          
+          if [[ $TAG_NAME == beta-* ]]; then
+            echo "Packaging Beta Release..."
+            # If Sparkle private key is provided as a secret, we can use it to sign
+            if [ -n "$SPARKLE_PRIVATE_KEY" ]; then
+              echo "$SPARKLE_PRIVATE_KEY" > sparkle_key.txt
+              ./build_beta.sh
+              rm -f sparkle_key.txt
+            else
+              # Build without signing if secret is not set (failsafe)
+              trap 'echo "=> Restoring Info.plist..."; plutil -replace SUFeedURL -string "https://releases-silk.vercel.app/appcast.xml" Drovio/Info.plist' EXIT
+              VERSION=$(xcodebuild -showBuildSettings | grep -w MARKETING_VERSION | head -n 1 | tr -d ' ' | cut -d'=' -f2)
+              plutil -replace SUFeedURL -string "https://releases-silk.vercel.app/appcast-beta.xml" Drovio/Info.plist
+              xcodebuild -scheme Drovio -archivePath Drovio.xcarchive archive
+              appdmg appdmg-beta.json releases/TestDrovio_${VERSION}.dmg
+            fi
+            echo "DMG_PATH=releases/TestDrovio_*.dmg" >> $GITHUB_ENV
+          else
+            echo "Packaging Stable Release..."
+            if [ -n "$SPARKLE_PRIVATE_KEY" ]; then
+              echo "$SPARKLE_PRIVATE_KEY" > sparkle_key.txt
+              ./build_main.sh
+              rm -f sparkle_key.txt
+            else
+              # Build without signing if secret is not set (failsafe)
+              VERSION=$(xcodebuild -showBuildSettings | grep -w MARKETING_VERSION | head -n 1 | tr -d " " | cut -d"=" -f2)
+              xcodebuild -scheme Drovio -archivePath Drovio.xcarchive archive
+              appdmg appdmg.json releases/Drovio_${VERSION}.dmg
+            fi
+            echo "DMG_PATH=releases/Drovio_*.dmg" >> $GITHUB_ENV
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.DMG_PATH }}
+          draft: false
+          prerelease: ${{ startsWith(github.ref, 'refs/tags/beta-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

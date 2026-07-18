@@ -134,15 +134,13 @@ Users can simply replace the app with the latest release from GitHub.
 
 ---
 
-## Future Installation Methods
+## Installation via Homebrew Cask
 
-Homebrew installation is planned.
+You can install Drovio using Homebrew by targeting the cask:
 
 ```bash
-brew install --cask drovio
+brew install --cask Casks/drovio.rb
 ```
-
-Coming Soon
 
 ---
 
@@ -171,6 +169,10 @@ Drovio/
 - `DownloadEngine` is a Swift actor that manages yt-dlp processes and parses live progress data.
 - `Toolbox` automates binary bootstrap checks and updates.
 - Stderr/stderr streams are mapped to user-friendly errors (private, deleted, age-restricted, network, etc.).
+
+### Tech Stack Details & GitHub Language Stats
+* **Language Detection:** GitHub reports this repository as containing ~50% Objective-C. This is purely because the public headers of the bundled **Sparkle.framework** (located in `Sparkle-Tools/`) are written in Objective-C. The core application logic and codebase are **100% Swift 6 / SwiftUI**.
+* **Notarization & Gatekeeper:** Because Drovio is self-built and distributed outside the Mac App Store, macOS Gatekeeper may show a warning that the app is "damaged" or from an "unidentified developer." Hardened notarization requires an Apple Developer Account subscription ($99/yr) and signing with a Developer ID Application certificate. If you do not have a paid account, you can build from source or remove the quarantine attribute as described in Troubleshooting.
 
 ---
 

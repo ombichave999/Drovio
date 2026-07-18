@@ -41,4 +41,5 @@ scratch_insta/
 *.part
 *.swift
 !Drovio/**/*.swift
+!DrovioTests/**/*.swift
 !Drovio/Utilities/Log.swift

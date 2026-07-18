@@ -16,8 +16,10 @@ enum FilenameSanitizer {
         var cleaned = title
             .components(separatedBy: illegal)
             .joined(separator: " ")
-            .replacingOccurrences(of: "  ", with: " ")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+        while cleaned.contains("  ") {
+            cleaned = cleaned.replacingOccurrences(of: "  ", with: " ")
+        }
         // Leading dots create hidden files on macOS.
         while cleaned.hasPrefix(".") { cleaned.removeFirst() }
         if cleaned.isEmpty { cleaned = "Video" }
