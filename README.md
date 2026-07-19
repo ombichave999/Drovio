@@ -1,4 +1,8 @@
-# Drovio
+<p align="center">
+  <img src="logo.png" alt="Drovio Logo" width="128" height="128">
+</p>
+
+<h1 align="center">Drovio</h1>
 
 <p align="center">
   <img src="screenshot.gif" alt="Drovio UI Animation" width="480">
