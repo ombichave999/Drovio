@@ -180,6 +180,9 @@ Drovio/
 
 ---
 
-## Legal
+## Legal & Disclaimer
 
-Download only content you have the right to download. Respect each platform's terms of service and copyright laws.
+**Drovio** is an open-source tool created for educational and personal use. By using this software, you agree that:
+- You are solely and fully responsible for complying with the terms of service, policies, and copyright restrictions of any third-party platforms (such as YouTube, Instagram, Spotify, Apple Music, etc.) from which you download content.
+- You will not download copyrighted material without explicit permission from the original owner or appropriate legal authorization under your local copyright laws.
+- The developers of Drovio assume no responsibility or liability for any copyright infringement or misuse of this tool. Use of the software is entirely at your own risk.
