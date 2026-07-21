@@ -74,7 +74,7 @@ hdiutil detach /Volumes/Drovio
 open /Applications/Drovio.app
 ```
 
-If Gatekeeper prevents launching, remove the quarantine attribute using:
+If Gatekeeper prevents the application from launching, you may need to clear the macOS download lock. This is standard behavior for independent, open-source Mac apps that aren't signed with a paid Apple Developer certificate ($99/year). Because Drovio is fully open-source, its code is public and auditable for anyone to inspect:
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/Drovio.app
@@ -111,7 +111,9 @@ Ad-hoc signing is already configured so an Apple Developer account is not requir
 <details>
 <summary><b>"Drovio is damaged and can't be opened"</b></summary>
 
-Gatekeeper may flag unsigned builds. Remove the quarantine attribute using:
+This warning occurs because the app is not signed with a paid Apple Developer certificate. This is standard behavior for free, open-source, and independent software. Drovio is completely safe, does not track you, and its source code is fully public and auditable here on GitHub. 
+
+To bypass this warning and unlock the app, open your Terminal and run this command:
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/Drovio.app
