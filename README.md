@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="drovio_banner.png" alt="Drovio Hero Banner" width="100%">
+  <img src="hero_banner.png" alt="Drovio Header Banner" width="100%">
+</p>
+
+<p align="center">
+  <b>A premium, native macOS menu bar downloader. Copy link to download from YouTube, Instagram, Spotify, and Apple Music instantly.</b>
 </p>
 
 <p align="center">
@@ -14,10 +18,6 @@
 ---
 
 **Drovio** is a lightweight, blazing-fast, and completely private downloader for macOS. Built purely with Swift 6 and SwiftUI, it sits quietly in your menu bar without cluttering your dock, allowing you to instantly download media from **YouTube**, **Instagram**, **Spotify**, and **Apple Music** simply by copying a link.
-
-<p align="center">
-  <img src="hero_banner.png" alt="Drovio App Mockup" width="100%">
-</p>
 
 <p align="center">
   <img src="works_with.png" alt="Works with YouTube, Instagram, Spotify, Apple Music" width="100%">
