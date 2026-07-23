@@ -39,7 +39,7 @@
 - [x] **Automatic Dependencies**: Silently downloads and updates its helper binaries (`yt-dlp` and `ffmpeg`) internally.
 
 <p align="center">
-  <img src="open_source.png" alt="Open source. Built in Swift." width="80%">
+  <img src="open_source.png" alt="Open source. Built in Swift." width="100%">
 </p>
 
 ---
